@@ -12,13 +12,12 @@ def main():
 	currency = sys.argv[1]
 
 	exch = RWf_Exchange()
-	sells = exch.sell_price(currency)
-	buys = exch.buy_price(currency)
-	av = exch.average_price(currency)
+	result = exch.get_exchange_rates(currency)
+
 	print(' ')
-	print("SELLING Price: ", sells)
-	print("BUYING Price: ", buys)
-	print("AVERAGE Price: ", av)
+	print("SELLING Price: ", result[1])
+	print("BUYING Price: ", result[2])
+	print("AVERAGE Price: ", result[3])
 	print(' ')
 
 
